@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>{{ user.username }}'s Liked Warbles</h2>
+  <ul>
+    {% for warble in liked_warbles %}
+      <li>{{ warble.text }} - <span class="text-muted">{{ warble.timestamp.strftime('%d %B %Y') }}</span></li>
+    {% else %}
+      <li>No liked warbles yet.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
